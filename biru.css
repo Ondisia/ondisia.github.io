@@ -30,3 +30,8 @@ footer {
 section {
   scroll-margin-top: 70px; /* cara baru, lebih rapi */
 }
+@media (max-width: 768px) {
+  section {
+    scroll-padding-top: 90px; /* lebih besar untuk mobile/tablet */
+  }
+}
