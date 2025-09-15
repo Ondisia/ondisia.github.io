@@ -1,0 +1,36 @@
+/* Ondisia Theme 3: Hitam + Cyan */
+body {
+  font-family: 'Poppins', sans-serif;
+  line-height: 1.7;
+  background: #121212;
+  color: #eee;
+}
+.navbar {
+  background: #0f0f0f;
+}
+header {
+  background: linear-gradient(135deg, #0f0f0f, #212121);
+}
+.btn-primary {
+  background-color: #00bcd4;
+  border: none;
+}
+.btn-primary:hover {
+  background-color: #0097a7;
+}
+.card {
+  border: 1px solid #00bcd4;
+  background: #1c1c1c;
+  color: #eee;
+  transition: transform .3s, box-shadow .3s;
+}
+.card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 20px rgba(0,188,212,.4);
+}
+#kontak {
+  background: linear-gradient(135deg, #00bcd4, #212121);
+}
+footer {
+  background: #0f0f0f;
+}

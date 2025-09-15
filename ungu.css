@@ -1,0 +1,56 @@
+body {
+  font-family: "Poppins", sans-serif;
+  line-height: 1.7;
+}
+
+/* Navbar */
+.navbar {
+  background: #1a1d29;
+}
+.navbar-brand {
+  font-weight: 700;
+  letter-spacing: 1px;
+}
+
+/* Hero */
+header {
+  background: linear-gradient(135deg, #1a1d29, #6c63ff);
+}
+header h1 {
+  font-weight: 700;
+}
+
+/* Buttons */
+.btn-primary {
+  background-color: #6c63ff;
+  border: none;
+}
+.btn-primary:hover {
+  background-color: #5a54d1;
+}
+
+/* Card */
+.card {
+  border: 1px solid rgba(0, 0, 0, 0.1); /* 🔹 Tambahkan border */
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+}
+
+/* Section Title */
+section h2 {
+  font-weight: 700;
+  margin-bottom: 30px;
+}
+
+/* Kontak Section */
+#kontak {
+  background: linear-gradient(135deg, #6c63ff, #00d4ff);
+}
+
+/* Footer */
+footer {
+  background: #1a1d29;
+}
