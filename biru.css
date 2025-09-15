@@ -27,3 +27,6 @@ footer {
   background: #1a237e;
   color: #fff;
 }
+section {
+  scroll-margin-top: 70px; /* cara baru, lebih rapi */
+}
