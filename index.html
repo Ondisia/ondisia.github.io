@@ -15,20 +15,30 @@
   <!-- AOS Animation -->
   <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
   <link rel="stylesheet" href="biru.css">
+
+  <!-- Smooth scroll -->
+  <style>
+    html {
+      scroll-behavior: smooth;
+    }
+  </style>
 </head>
 
-<body>
+<!-- Tambahkan data-bs-spy dan data-bs-target -->
+
+<body data-bs-spy="scroll" data-bs-target="#navbarNav" tabindex="0">
+
 
   <!-- Navbar -->
   <nav class="navbar navbar-expand-lg navbar-dark py-3 sticky-top shadow-sm">
     <div class="container">
-      <a class="navbar-brand fs-4 fw-bold" href="#">Ondisia</a>
+      <a class="navbar-brand fs-4 fw-bold" href="#beranda">Ondisia</a>
       <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
         <span class="navbar-toggler-icon"></span>
       </button>
       <div class="collapse navbar-collapse" id="navbarNav">
         <ul class="navbar-nav ms-auto">
-          <li class="nav-item"><a class="nav-link active" href="#">Beranda</a></li>
+          <li class="nav-item"><a class="nav-link active" href="#beranda">Beranda</a></li>
           <li class="nav-item"><a class="nav-link" href="#layanan">Layanan</a></li>
           <li class="nav-item"><a class="nav-link" href="#belajar">Belajar</a></li>
           <li class="nav-item"><a class="nav-link" href="#portfolio">Portfolio</a></li>
@@ -39,7 +49,7 @@
   </nav>
 
   <!-- Hero Section -->
-  <header class="text-white text-center py-5">
+  <header id="beranda" class="text-white text-center py-5">
     <div class="container" data-aos="fade-up">
       <h1 class="display-4 fw-bold">Solusi Digital & Belajar Web</h1>
       <p class="lead mb-4">Bangun website, aplikasi, dan belajar web bersama Ondisia.</p>
@@ -85,7 +95,7 @@
       <div class="row g-4 mt-4">
         <div class="col-md-6" data-aos="fade-right">
           <div class="p-4 bg-white shadow rounded h-100">
-            <h5>Artikel Gratis <span style="font-size: 10px; color: red;">coming soon</span></h5>
+            <h5>Artikel Gratis</h5>
             <p>Tutorial sederhana tentang HTML, CSS, JavaScript, Laravel, dan lainnya.</p>
           </div>
         </div>
@@ -162,7 +172,6 @@
                 <i class="fa-solid fa-paper-plane"></i> Kirim
               </button>
             </form>
-
           </div>
         </div>
 
@@ -186,7 +195,6 @@
     </div>
   </section>
 
-
   <!-- Footer -->
   <footer class="text-white text-center py-3">
     <div class="container">
@@ -203,6 +211,57 @@
       once: true
     });
   </script>
+  <script>
+    document.addEventListener("DOMContentLoaded", function () {
+      const navbar = document.querySelector(".navbar");
+      const navLinks = document.querySelectorAll(".nav-link");
+      const sections = document.querySelectorAll("header, section");
+
+      // Smooth scroll dengan offset navbar
+      navLinks.forEach(link => {
+        link.addEventListener("click", function (e) {
+          e.preventDefault();
+          const targetId = this.getAttribute("href").substring(1);
+          const targetEl = document.getElementById(targetId);
+
+          if (targetEl) {
+            const navbarHeight = navbar.offsetHeight;
+            const elementPosition = targetEl.getBoundingClientRect().top + window.pageYOffset;
+            const offsetPosition = elementPosition - navbarHeight;
+
+            window.scrollTo({
+              top: offsetPosition,
+              behavior: "smooth"
+            });
+          }
+
+          // Auto close navbar di mobile
+          const bsCollapse = document.querySelector(".navbar-collapse");
+          if (bsCollapse.classList.contains("show")) {
+            new bootstrap.Collapse(bsCollapse).toggle();
+          }
+        });
+      });
+
+      // Scrollspy manual dengan scrollY + offset
+      window.addEventListener("scroll", () => {
+        let scrollPos = window.scrollY + navbar.offsetHeight + 50; // +50px buffer
+
+        sections.forEach(sec => {
+          if (
+            scrollPos >= sec.offsetTop &&
+            scrollPos < sec.offsetTop + sec.offsetHeight
+          ) {
+            navLinks.forEach(link => link.classList.remove("active"));
+            const currentLink = document.querySelector(`.nav-link[href="#${sec.id}"]`);
+            if (currentLink) currentLink.classList.add("active");
+          }
+        });
+      });
+    });
+  </script>
+
+
 </body>
 
 </html>
