@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="id">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -15,6 +16,7 @@
   <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
   <link rel="stylesheet" href="biru.css">
 </head>
+
 <body>
 
   <!-- Navbar -->
@@ -135,13 +137,55 @@
 
   <!-- Kontak -->
   <section id="kontak" class="text-white py-5">
-    <div class="container text-center" data-aos="fade-up">
-      <h2 class="mb-4">Hubungi Kami</h2>
-      <p>Butuh website, aplikasi, atau ingin ikut kursus? Silakan hubungi Ondisia.</p>
-      <a href="https://wa.me/6282229062398" class="btn btn-light me-2"><i class="fab fa-whatsapp"></i> WhatsApp</a>
-      <a href="mailto:ondisia.group@gmail.com" class="btn btn-outline-light"><i class="fa-solid fa-envelope"></i> Email</a>
+    <div class="container" data-aos="fade-up">
+      <h2 class="mb-4 text-center">Hubungi Kami</h2>
+      <p class="text-center">Butuh website, aplikasi, atau ingin ikut kursus? Silakan hubungi Ondisia.</p>
+
+      <div class="row g-4 mt-4">
+        <!-- Form -->
+        <div class="col-md-6">
+          <div class="bg-white text-dark p-4 rounded shadow">
+            <form action="mailto:ondisia.group@gmail.com" method="post" enctype="text/plain">
+              <div class="mb-3">
+                <label class="form-label">Nama</label>
+                <input type="text" name="nama" class="form-control" placeholder="Nama Anda">
+              </div>
+              <div class="mb-3">
+                <label class="form-label">Email</label>
+                <input type="email" name="email" class="form-control" placeholder="Email Anda">
+              </div>
+              <div class="mb-3">
+                <label class="form-label">Pesan</label>
+                <textarea name="pesan" class="form-control" rows="4" placeholder="Tulis pesan Anda..."></textarea>
+              </div>
+              <button type="submit" class="btn btn-primary">
+                <i class="fa-solid fa-paper-plane"></i> Kirim
+              </button>
+            </form>
+
+          </div>
+        </div>
+
+        <!-- Map -->
+        <div class="col-md-6">
+          <div class="rounded shadow overflow-hidden h-100">
+            <iframe
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d31624.888150368482!2d113.45860495214839!3d-7.778051795821119!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2dd703a56f7e9167%3A0x2016a5c0e652ab94!2sSunniarum%20Cake!5e0!3m2!1sid!2sid!4v1758162877251!5m2!1sid!2sid"
+              width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy"
+              referrerpolicy="no-referrer-when-downgrade"></iframe>
+          </div>
+        </div>
+      </div>
+
+      <!-- Tombol kontak cepat -->
+      <div class="text-center mt-4">
+        <a href="https://wa.me/6282229062398" class="btn btn-light me-2"><i class="fab fa-whatsapp"></i> WhatsApp</a>
+        <a href="mailto:ondisia.group@gmail.com" class="btn btn-outline-light"><i class="fa-solid fa-envelope"></i>
+          Email</a>
+      </div>
     </div>
   </section>
+
 
   <!-- Footer -->
   <footer class="text-white text-center py-3">
@@ -160,4 +204,5 @@
     });
   </script>
 </body>
+
 </html>
